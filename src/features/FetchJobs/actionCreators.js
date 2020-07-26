@@ -5,7 +5,3 @@ export const requestSuccess = (data) => ({
   type: ACTIONS.REQUEST_SUCCESS,
   payload: data,
 });
-export const requestError = (error) => ({
-  type: ACTIONS.REQUEST_ERROR,
-  payload: error,
-});
