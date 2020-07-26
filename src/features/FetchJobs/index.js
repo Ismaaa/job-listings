@@ -5,7 +5,6 @@ import { requestData, requestSuccess } from './actionCreators';
 import data from './data';
 
 export default function useFetchJobs() {
-  // const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
   const [state, dispatch] = useReducer(
     process.env.NODE_ENV === 'development' ? logger(reducer) : reducer,
     DEFAULT_STATE
