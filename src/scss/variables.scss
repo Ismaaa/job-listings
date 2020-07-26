@@ -1,6 +1,7 @@
 :root {
   // Colors
   --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
   --color-primary: hsl(180, 29%, 50%);
   --color-secondary-background: hsl(180, 52%, 96%);
   --color-secondary-tablets: hsl(180, 52%, 96%);
@@ -9,21 +10,23 @@
 
   // Typography
   --font-family: 'Spartan', sans-serif;
+  --font-size: 15px;
 
   // Margins
-  --generic-margin: 3rem;
-  --generic-margin-small: 2rem;
+  --margin: 3rem;
+  --margin-small: 2rem;
 
   // Paddings
-  --generic-padding: 35px;
-  --generic-padding-small: 20px;
+  --padding: 35px;
+  --padding-small: 15px;
 
   // Shadows
-  --generic-shadow: 10px 25px 30px 0px rgba(0,0,0,0.2);
+  --shadow: 10px 25px 30px 0px rgba(0,0,0,0.2);
 
   // Cards
   --card-max-width: 1024px;
 
   // Borders
-  --generic-border-radius: 7px;
+  --border-radius: 7px;
+  --border-radius-big: 15px;
 }

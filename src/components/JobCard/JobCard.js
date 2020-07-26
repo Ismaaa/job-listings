@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './JobCard.scss';
+import Badge from '../Badge';
 
 const JobCard = ({
   logo,
@@ -19,8 +20,8 @@ const JobCard = ({
     <img src={logo} alt={company} className="JobCard__logo" />
     <div className="JobCard__heading">
       <span className="JobCard__company">{company}</span>
-      {isNew && 'Is new !'}
-      {isFeatured && 'Is featured !'}
+      {isNew && <Badge>New!</Badge>}
+      {isFeatured && <Badge dark>Featured!</Badge>}
     </div>
     <h3 className="JobCard__position">{position}</h3>
     <div className="JobCard__info">

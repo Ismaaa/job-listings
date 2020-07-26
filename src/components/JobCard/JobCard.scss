@@ -3,15 +3,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  border-radius: var(--generic-border-radius);
+  border-radius: var(--border-radius);
   background-color: var(--color-white);
   width: 95%;
   max-width: var(--card-max-width);
-  margin-bottom: var(--generic-margin);
-  -webkit-box-shadow: var(--generic-shadow);
-  -moz-box-shadow: var(--generic-shadow);
-  box-shadow: var(--generic-shadow);
-  padding: var(--generic-padding) var(--generic-padding-small) var(--generic-padding-small);
+  margin-bottom: var(--margin);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
+  padding: var(--padding) var(--padding-small) var(--padding-small);
   border-left: 5px solid var(--color-primary);
   position: relative;
 
@@ -24,6 +24,10 @@
 
   &__heading {
     margin-bottom: 10px;
+
+    & > * {
+      margin-right: 10px;
+    }
   }
 
   &__company {
