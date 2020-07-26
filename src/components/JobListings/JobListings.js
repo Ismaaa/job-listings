@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetchJobs from '../../features/FetchJobs';
 import JobCard from '../JobCard';
+import './JobListings.scss';
 
 const JobListings = () => {
   const { jobs, loading } = useFetchJobs();
@@ -8,7 +9,7 @@ const JobListings = () => {
   if (loading) return <h1>Loading...</h1>;
 
   return (
-    <ul>
+    <div className="JobListings">
       {jobs.map(
         ({
           logo,
@@ -36,7 +37,7 @@ const JobListings = () => {
           />
         )
       )}
-    </ul>
+    </div>
   );
 };
 

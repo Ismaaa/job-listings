@@ -1,8 +1,29 @@
 :root {
   // Colors
+  --color-white: hsl(0, 0%, 100%);
   --color-primary: hsl(180, 29%, 50%);
   --color-secondary-background: hsl(180, 52%, 96%);
   --color-secondary-tablets: hsl(180, 52%, 96%);
   --color-secondary-dark: hsl(180, 8%, 52%);
   --color-secondary-darker: hsl(180, 14%, 20%);
+
+  // Typography
+  --font-family: 'Spartan', sans-serif;
+
+  // Margins
+  --generic-margin: 3rem;
+  --generic-margin-small: 2rem;
+
+  // Paddings
+  --generic-padding: 35px;
+  --generic-padding-small: 20px;
+
+  // Shadows
+  --generic-shadow: 10px 25px 30px 0px rgba(0,0,0,0.2);
+
+  // Cards
+  --card-max-width: 1024px;
+
+  // Borders
+  --generic-border-radius: 7px;
 }
