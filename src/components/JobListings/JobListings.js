@@ -1,5 +1,6 @@
 import React from 'react';
 import useFetchJobs from '../../features/FetchJobs';
+import JobCard from '../JobCard';
 
 const JobListings = () => {
   const { jobs, loading } = useFetchJobs();
@@ -8,19 +9,33 @@ const JobListings = () => {
 
   return (
     <ul>
-      {jobs.map((job) => (
-        <ul key={job.id}>
-          <li>{job.id}</li>
-          <li>{job.company}</li>
-          <li>{job.logo}</li>
-          <li>
-            <img src={job.logo} alt={job.company} />
-          </li>
-          <li>{job.new}</li>
-          <li>{job.featured}</li>
-          <li>{job.contract}</li>
-        </ul>
-      ))}
+      {jobs.map(
+        ({
+          logo,
+          company,
+          isNew,
+          isFeatured,
+          position,
+          postedAt,
+          contract,
+          location,
+          languages,
+          tools,
+        }) => (
+          <JobCard
+            logo={logo}
+            company={company}
+            isNew={isNew}
+            isFeatured={isFeatured}
+            position={position}
+            postedAt={postedAt}
+            contract={contract}
+            location={location}
+            languages={languages}
+            tools={tools}
+          />
+        )
+      )}
     </ul>
   );
 };
