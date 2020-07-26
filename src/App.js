@@ -1,7 +1,8 @@
 import React from 'react';
+import JobListings from './components/JobListings';
 
 function App() {
-  return <div>Hello world !</div>;
+  return <JobListings />;
 }
 
 export default App;
