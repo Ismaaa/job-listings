@@ -13,6 +13,9 @@ const JobListings = () => {
           <li>{job.id}</li>
           <li>{job.company}</li>
           <li>{job.logo}</li>
+          <li>
+            <img src={job.logo} alt={job.company} />
+          </li>
           <li>{job.new}</li>
           <li>{job.featured}</li>
           <li>{job.contract}</li>
