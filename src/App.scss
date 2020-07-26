@@ -2,5 +2,7 @@
 @import "scss/variables";
 
 .App {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-secondary-background);
 }
