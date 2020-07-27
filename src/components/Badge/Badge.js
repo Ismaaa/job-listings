@@ -6,9 +6,13 @@ const Badge = ({ dark, children }) => (
   <span className={`Badge Badge${dark ? '--dark' : ''}`}>{children}</span>
 );
 
+Badge.defaultProps = {
+  dark: false,
+};
+
 Badge.propTypes = {
-  dark: PropTypes.bool.isRequired,
-  children: PropTypes.element.isRequired,
+  dark: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 
 export default Badge;

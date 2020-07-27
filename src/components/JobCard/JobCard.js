@@ -23,7 +23,7 @@ const JobCard = ({
       {isNew && <Badge>New!</Badge>}
       {isFeatured && <Badge dark>Featured!</Badge>}
     </div>
-    <h3 className="JobCard__position">{position}</h3>
+    <h1 className="JobCard__position">{position}</h1>
     <div className="JobCard__info">
       <span className="JobCard__info-item">{postedAt}</span>
       <span className="JobCard__info-item">{contract}</span>
@@ -32,12 +32,12 @@ const JobCard = ({
     <hr className="JobCard__separator" />
     <div className="JobCard__tags">
       {languages.map((language) => (
-        <button type="button" className="JobCard__tag">
+        <button key={language} type="button" className="JobCard__tag">
           {language}
         </button>
       ))}
       {tools.map((tool) => (
-        <button type="button" className="JobCard__tag">
+        <button key={tool} type="button" className="JobCard__tag">
           {tool}
         </button>
       ))}

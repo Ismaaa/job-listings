@@ -12,6 +12,7 @@ const JobListings = () => {
     <div className="JobListings">
       {jobs.map(
         ({
+          id,
           logo,
           company,
           isNew,
@@ -24,6 +25,7 @@ const JobListings = () => {
           tools,
         }) => (
           <JobCard
+            key={id}
             logo={logo}
             company={company}
             isNew={isNew}
