@@ -18,6 +18,8 @@ const JobListings = () => {
           isNew,
           isFeatured,
           position,
+          role,
+          level,
           postedAt,
           contract,
           location,
@@ -31,6 +33,8 @@ const JobListings = () => {
             isNew={isNew}
             isFeatured={isFeatured}
             position={position}
+            role={role}
+            level={level}
             postedAt={postedAt}
             contract={contract}
             location={location}

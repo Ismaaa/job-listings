@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './JobCard.scss';
 import Badge from '../Badge';
+import Tag from '../Tag';
 
 const JobCard = ({
   logo,
@@ -10,40 +11,41 @@ const JobCard = ({
   isNew,
   isFeatured,
   position,
+  role,
+  level,
   postedAt,
   contract,
   location,
   languages,
   tools,
-}) => (
-  <div className="JobCard">
-    <img src={logo} alt={company} className="JobCard__logo" />
-    <div className="JobCard__heading">
-      <span className="JobCard__company">{company}</span>
-      {isNew && <Badge>New!</Badge>}
-      {isFeatured && <Badge dark>Featured!</Badge>}
+}) => {
+  const renderTags = () => {
+    const tags = [role, level, ...languages, ...tools];
+
+    return tags.map((tag) => (
+      <Tag key={tag} name={tag} handleClick={() => console.log(tag)} />
+    ));
+  };
+
+  return (
+    <div className="JobCard">
+      <img src={logo} alt={company} className="JobCard__logo" />
+      <div className="JobCard__heading">
+        <span className="JobCard__company">{company}</span>
+        {isNew && <Badge>New!</Badge>}
+        {isFeatured && <Badge dark>Featured!</Badge>}
+      </div>
+      <h1 className="JobCard__position">{position}</h1>
+      <div className="JobCard__info">
+        <span className="JobCard__info-item">{postedAt}</span>
+        <span className="JobCard__info-item">{contract}</span>
+        <span className="JobCard__info-item">{location}</span>
+      </div>
+      <hr className="JobCard__separator" />
+      <div className="JobCard__tags">{renderTags()}</div>
     </div>
-    <h1 className="JobCard__position">{position}</h1>
-    <div className="JobCard__info">
-      <span className="JobCard__info-item">{postedAt}</span>
-      <span className="JobCard__info-item">{contract}</span>
-      <span className="JobCard__info-item">{location}</span>
-    </div>
-    <hr className="JobCard__separator" />
-    <div className="JobCard__tags">
-      {languages.map((language) => (
-        <button key={language} type="button" className="JobCard__tag">
-          {language}
-        </button>
-      ))}
-      {tools.map((tool) => (
-        <button key={tool} type="button" className="JobCard__tag">
-          {tool}
-        </button>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 JobCard.propTypes = {
   logo: PropTypes.string.isRequired,
