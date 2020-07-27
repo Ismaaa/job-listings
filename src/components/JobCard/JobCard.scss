@@ -49,18 +49,22 @@
   }
 
   &__position {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 15px;
   }
 
   &__info {
     color: var(--color-secondary-dark);
+  }
 
-    & > *:not(:last-child)::after {
+  &__info-item {
+    font-size: 14px;
+
+    &:not(:last-child)::after {
       content: "\00b7";
       font-weight: bold;
-      margin: 0 12px;
+      margin: 0 9px;
     }
   }
 
