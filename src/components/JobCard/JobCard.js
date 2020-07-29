@@ -2,8 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './JobCard.scss';
+import { useDispatch } from 'react-redux';
 import Badge from '../Badge';
 import Tag from '../Tag';
+import { toggleFilter } from '../../store/ducks/jobs';
 
 const JobCard = (props) => {
   const {
@@ -21,11 +23,17 @@ const JobCard = (props) => {
     tools,
   } = props;
 
+  const dispatch = useDispatch();
+
   const renderTags = () => {
     const tags = [role, level, ...languages, ...tools];
 
     return tags.map((tag) => (
-      <Tag key={tag} name={tag} handleClick={() => console.log(tag)} />
+      <Tag
+        key={tag}
+        name={tag}
+        handleClick={() => dispatch(toggleFilter(tag))}
+      />
     ));
   };
 
