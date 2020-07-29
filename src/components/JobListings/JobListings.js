@@ -1,50 +1,26 @@
-import React from 'react';
-import useFetchJobs from '../../features/FetchJobs';
-import JobCard from '../JobCard';
+import React, { useEffect } from 'react';
 import './JobListings.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchJobs } from '../../store/ducks/jobs';
+import { renderJobs } from './helpers';
 
 const JobListings = () => {
-  const { jobs, loading } = useFetchJobs();
+  const dispatch = useDispatch();
+  const { jobs, error } = useSelector((store) => store.jobs);
 
-  if (loading) return <h1>Loading...</h1>;
+  useEffect(() => {
+    dispatch(fetchJobs());
+  }, []);
 
-  return (
-    <div className="JobListings">
-      {jobs.map(
-        ({
-          id,
-          logo,
-          company,
-          isNew,
-          isFeatured,
-          position,
-          role,
-          level,
-          postedAt,
-          contract,
-          location,
-          languages,
-          tools,
-        }) => (
-          <JobCard
-            key={id}
-            logo={logo}
-            company={company}
-            isNew={isNew}
-            isFeatured={isFeatured}
-            position={position}
-            role={role}
-            level={level}
-            postedAt={postedAt}
-            contract={contract}
-            location={location}
-            languages={languages}
-            tools={tools}
-          />
-        )
-      )}
-    </div>
-  );
+  if (error) {
+    return (
+      <h1 style={{ textAlign: 'center', fontSize: 40, margin: 50 }}>
+        Error loading database
+      </h1>
+    );
+  }
+
+  return <div className="JobListings">{renderJobs(jobs)}</div>;
 };
 
 export default JobListings;

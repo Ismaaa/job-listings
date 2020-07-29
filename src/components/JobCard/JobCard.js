@@ -5,20 +5,22 @@ import './JobCard.scss';
 import Badge from '../Badge';
 import Tag from '../Tag';
 
-const JobCard = ({
-  logo,
-  company,
-  isNew,
-  isFeatured,
-  position,
-  role,
-  level,
-  postedAt,
-  contract,
-  location,
-  languages,
-  tools,
-}) => {
+const JobCard = (props) => {
+  const {
+    logo,
+    company,
+    isNew,
+    isFeatured,
+    position,
+    role,
+    level,
+    postedAt,
+    contract,
+    location,
+    languages,
+    tools,
+  } = props;
+
   const renderTags = () => {
     const tags = [role, level, ...languages, ...tools];
 
@@ -53,6 +55,8 @@ JobCard.propTypes = {
   isNew: PropTypes.bool.isRequired,
   isFeatured: PropTypes.bool.isRequired,
   position: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  level: PropTypes.string.isRequired,
   postedAt: PropTypes.string.isRequired,
   contract: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
