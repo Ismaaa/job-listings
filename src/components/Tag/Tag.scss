@@ -7,6 +7,12 @@
   margin: 5px;
   cursor: pointer;
   transition: 0.3s all;
+  border-radius: 5px;
+
+  &--active {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
 
   &:hover {
     transform: translateY(-5px);

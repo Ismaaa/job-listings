@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './JobCard.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Badge from '../Badge';
 import Tag from '../Tag';
 import { toggleFilter } from '../../store/ducks/jobs';
@@ -24,17 +24,23 @@ const JobCard = (props) => {
   } = props;
 
   const dispatch = useDispatch();
+  const { filters } = useSelector((state) => state.jobs);
 
   const renderTags = () => {
     const tags = [role, level, ...languages, ...tools];
 
-    return tags.map((tag) => (
-      <Tag
-        key={tag}
-        name={tag}
-        handleClick={() => dispatch(toggleFilter(tag))}
-      />
-    ));
+    return tags.map((tag) => {
+      const isActive = filters.includes(tag);
+
+      return (
+        <Tag
+          key={tag}
+          name={tag}
+          handleClick={() => dispatch(toggleFilter(tag))}
+          active={isActive}
+        />
+      );
+    });
   };
 
   return (
