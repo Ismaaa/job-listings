@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import './JobListings.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchJobs } from '../../store/ducks/jobs';
+import { applyFilters, fetchJobs } from '../../store/ducks/jobs';
 import { renderJobs } from './helpers';
 
 const JobListings = () => {
   const dispatch = useDispatch();
-  const { jobs, error } = useSelector((store) => store.jobs);
+  const { filteredJobs, error } = useSelector((store) => store.jobs);
 
   useEffect(() => {
     dispatch(fetchJobs());
+    dispatch(applyFilters());
   }, []);
 
   if (error) {
@@ -20,7 +21,7 @@ const JobListings = () => {
     );
   }
 
-  return <div className="JobListings">{renderJobs(jobs)}</div>;
+  return <div className="JobListings">{renderJobs(filteredJobs)}</div>;
 };
 
 export default JobListings;

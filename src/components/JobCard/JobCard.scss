@@ -52,6 +52,11 @@
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 15px;
+    
+    &:hover {
+      cursor: pointer;
+      color: var(--color-secondary-dark)
+    }
   }
 
   &__info {
