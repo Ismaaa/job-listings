@@ -16,17 +16,19 @@
   position: relative;
 
   @media screen and (min-width: 1440px) {
-    flex-direction: row;
+    padding-left: 8.5rem;
+    padding-bottom: var(--padding);
   }
 
   &__logo {
     position: absolute;
     top: -1.7rem;
     left: 1rem;
-    width: 88px;
+    width: 50px;
 
     @media screen and (min-width: 1440px) {
       top: 25%;
+      width: 88px;
     }
   }
 
@@ -47,13 +49,6 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: start;
-    }
-
-    @media screen and (min-width: 1440px) {
-      justify-content: center;
-      align-content: center;
-      margin-left: 6rem;
-      width: 100%;
     }
   }
 
@@ -93,9 +88,16 @@
     margin: 12px 0;
     border: none;
     border-top: 1px solid #cdcdcd;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
   }
 
   &__tags {
-
+    @media screen and (min-width: 1440px) {
+      position: absolute;
+      right: 50px;
+    }
   }
 }
