@@ -7,7 +7,7 @@
   background-color: var(--color-white);
   width: 95%;
   max-width: var(--card-max-width);
-  margin-bottom: var(--margin);
+  margin-bottom: var(--margin-extra-small);
   -webkit-box-shadow: var(--shadow);
   -moz-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
@@ -59,7 +59,7 @@
   }
 
   &__position {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px;
     
@@ -74,11 +74,11 @@
   }
 
   &__info-item {
-    font-size: 13px;
+    font-weight: 500;
 
     &:not(:last-child)::after {
       content: "\00b7";
-      font-weight: bold;
+      font-weight: 700;
       margin: 0 9px;
     }
   }
