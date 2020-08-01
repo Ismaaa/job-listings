@@ -44,7 +44,7 @@ const JobCard = (props) => {
   };
 
   return (
-    <div className="JobCard">
+    <div className={`JobCard ${isFeatured && 'JobCard--featured'}`}>
       <img src={logo} alt={company} className="JobCard__logo" />
       <div className="JobCard__heading">
         <span className="JobCard__company">{company}</span>

@@ -12,12 +12,15 @@
   -moz-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
   padding: var(--padding) var(--padding-small) var(--padding-small);
-  border-left: 5px solid var(--color-primary);
   position: relative;
 
   @media screen and (min-width: 1440px) {
     padding-left: 8.5rem;
     padding-bottom: var(--padding);
+  }
+
+  &--featured {
+    border-left: 5px solid var(--color-primary);
   }
 
   &__logo {
